@@ -1,4 +1,4 @@
-# 🎯 SMART-ATTEND  
+# 🎯 FaceMask 360
 > **AI-powered Face Recognition Attendance System**
 
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue?style=for-the-badge&logo=python)
@@ -9,7 +9,7 @@
 ---
 
 ## 📌 Overview
-**SMART-ATTEND** is a **real-time face recognition attendance system** built with cutting-edge AI models.  
+**FaceMask 360** is a **real-time face recognition attendance system** built with cutting-edge AI models.  
 It offers a **fast, accurate, and contactless** way to record attendance using a webcam feed, making it ideal for classrooms, offices, and events.
 
 We experimented with **three models**:
