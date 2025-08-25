@@ -16,7 +16,10 @@ face_cascade = cv2.CascadeClassifier(haar_file)
 # Get student info
 roll = input("Enter Roll Number: ").strip()
 name = input("Enter Name: ").strip()
-student_folder = os.path.join(dataset_path, f"{roll}_{name}")
+student_class = input("Enter Class: ").strip()
+
+# Folder format: roll_name_class
+student_folder = os.path.join(dataset_path, f"{roll}_{name}_{student_class}")
 os.makedirs(student_folder, exist_ok=True)
 
 # Start camera and collect 30 face samples
@@ -53,11 +56,11 @@ print(f"✅ {count} images saved in {student_folder}")
 
 # Create students.csv if empty or non-existent
 if not os.path.exists(students_file) or os.stat(students_file).st_size == 0:
-    df = pd.DataFrame(columns=["Roll", "Name"])
+    df = pd.DataFrame(columns=["Roll", "Name", "Class"])
 else:
     df = pd.read_csv(students_file)
 
 # Add new entry using concat (for pandas >= 2.0)
-df = pd.concat([df, pd.DataFrame([{"Roll": roll, "Name": name}])], ignore_index=True)
+df = pd.concat([df, pd.DataFrame([{"Roll": roll, "Name": name, "Class": student_class}])], ignore_index=True)
 df.to_csv(students_file, index=False)
 print(f"📄 Student data saved to {students_file}")
